@@ -2,7 +2,7 @@ import React from "react";
 
 export const NavBar = () => {
   return (
-    <nav className='navBar'>
+    <nav className="navBar">
       <ul>
         <li>
           <a href="index.html">Home</a>
@@ -17,7 +17,7 @@ export const NavBar = () => {
           <a href="preguntasFrecuentes.html">Preguntas Frecuentes</a>
         </li>
         <li>
-          <a href="preguntasFrecuentes.html">Envio</a>
+          <a href="envio.html">Envio</a>
         </li>
         <li>
           <a href="contacto.html">Contacto</a>
