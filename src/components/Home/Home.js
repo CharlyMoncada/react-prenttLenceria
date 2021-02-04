@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Index = () => {
+export const Home = () => {
   return (
     <section>
       <div className="index">
@@ -16,7 +16,7 @@ export const Index = () => {
 
         <div className="index__image">
           <img
-            src="./images/products/PIN43502.jpg"
+            src={`${process.env.PUBLIC_URL}/images/products/PIN43502.jpg`}
             alt="Prentt Lenceria"
             className="index__image--item"
           />

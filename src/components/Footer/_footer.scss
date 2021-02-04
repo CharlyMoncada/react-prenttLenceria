@@ -1,0 +1,11 @@
+.footer {
+    grid-area: 4 / 1 / 5 / 4;
+  
+    .footer__list {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+  

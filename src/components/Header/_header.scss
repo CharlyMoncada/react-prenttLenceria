@@ -1,0 +1,13 @@
+header {
+    grid-area: 1 / 1 / 2 / 4;
+    background-color: $color-background;
+    //background-image: url(".././Header/logoPrent.png");
+    background-repeat: no-repeat;
+    background-size: 28vh;
+    background-position: center top;
+
+    @media screen and (max-width: 767px) {
+      grid-area: 1 / 2 / 3 / 4;
+    }
+  }
+  
