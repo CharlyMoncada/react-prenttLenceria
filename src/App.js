@@ -9,6 +9,7 @@ import { Home } from "./components/Home/Home";
 import { PreguntasFrecuentes } from "./components/PreguntasFrecuentes/PreguntasFrecuentes";
 import { Envios } from "./components/Envios/Envios";
 import { Contacto } from "./components/Contacto/Contacto";
+import { Catalogo } from "./components/Catalogo/Catalogo";
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/catalogo">
+            <Catalogo />
           </Route>
           <Route exact path="/envios">
             <Envios />
