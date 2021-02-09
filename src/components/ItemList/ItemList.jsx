@@ -6,7 +6,7 @@ export default function ItemList({ items }) {
     <div class="grid-gallery" id="gallery">
       {items &&
         items.map((item) => {
-          return <Item item={item} key={item.id} />;
+          return <Item key={item.id} item={item} />;
         })}
     </div>
   );
