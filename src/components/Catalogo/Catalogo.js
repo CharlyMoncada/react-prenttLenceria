@@ -1,5 +1,5 @@
 import React from "react";
-import ItemsContainer from "../../containers/ItemsContainer";
+import ItemsContainer from "../../containers/ItemListContainer";
 
 export const Catalogo = () => {
   return (

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getFirestore } from "../firebase/index";
 import ItemList from "../components/ItemList/ItemList.jsx";
 
-const ItemsContainer = () => {
+const ItemsListContainer = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -17,10 +17,13 @@ const ItemsContainer = () => {
         };
       });
       setProducts(arrayItems);
+    })
+    .catch((error) => {
+      console.log(error);
     });
   }, []);
 
   return <ItemList items={products} />;
 };
 
-export default ItemsContainer;
+export default ItemsListContainer;
