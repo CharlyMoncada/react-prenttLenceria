@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getFirestore } from "../firebase/index";
 import ItemList from "../components/ItemList/ItemList.jsx";
-import './_itemListContainer.scss';
 
 const ItemsListContainer = () => {
   const [products, setProducts] = useState([]);

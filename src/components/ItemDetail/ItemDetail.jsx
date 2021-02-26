@@ -32,26 +32,24 @@ const ItemDetail = ({ product }) => {
             </tr>
           </table>
 
-          <img
-            className="grid-gallery__image"
-            id={product.id}
-            src={product.route}
-            alt={product.name}
-          />
+          <img id={product.id} src={product.route} alt={product.name} />
+          <br />
+          <div>
+            <ItemCounter
+              initial={1}
+              max={product.stock}
+              onAdd={handleCounter}
+            />
+          </div>
+
+          <br />
+          <div>
+            <button onClick={() => addItem(product, quantity)}>
+              Agregar {quantity} items al carrito
+            </button>
+          </div>
         </div>
       )}
-
-      <br />
-      <div>
-        <ItemCounter initial={1} max={5} onAdd={handleCounter} />
-      </div>
-
-      <br />
-      <div>
-        <button onClick={() => addItem(product, quantity)}>
-          Agregar {quantity} items al carrito
-        </button>
-      </div>
     </div>
   );
 };

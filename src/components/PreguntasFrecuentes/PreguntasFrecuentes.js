@@ -1,4 +1,5 @@
 import React from "react";
+import "./_preguntasFrecuentes.scss";
 
 export const PreguntasFrecuentes = () => {
     return (

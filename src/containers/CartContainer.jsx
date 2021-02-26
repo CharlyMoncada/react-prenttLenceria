@@ -5,9 +5,11 @@ import './_cartContainer.scss';
 
 export default function CartContainer() {
   return (
-    <div className="cartContainer">
-      <UserForm />
-      <Cart />
-    </div>
+    <section>
+      <div className="cartContainer">
+        <UserForm />
+        <Cart />
+      </div>
+    </section>
   );
 }

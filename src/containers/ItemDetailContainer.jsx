@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getFirestore } from "../firebase/index";
 import ItemDetail from "../components/ItemDetail/ItemDetail";
-//import './_itemListContainer.scss';
 
 export default function ItemDetailContainer() {
   const { itemId } = useParams();

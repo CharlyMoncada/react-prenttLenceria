@@ -18,24 +18,22 @@ function App() {
   return (
     <CartProvider>
       <BrowserRouter>
-        <div>
-          <Header />
-          <NavBar />
-          <Switch>
-            <Route exact path="/" render={() => <HomeContainer />} />
-            <Route exact path="/catalogo" component={ItemsListContainer} />
-            <Route exact path="/envios" component={Envios} />
-            <Route exact path="/contacto" component={Contacto} />
-            <Route
-              exact
-              path="/preguntasFrecuentes"
-              component={PreguntasFrecuentes}
-            />
-            <Route exact path="/item/:itemId" component={ItemDetailContainer} />
-            <Route exact path="/carrito" component={CartContainer} />
-          </Switch>
-          <Footer />
-        </div>
+        <Header />
+        <NavBar />
+        <Switch>
+          <Route exact path="/" render={() => <HomeContainer />} />
+          <Route exact path="/catalogo" component={ItemsListContainer} />
+          <Route exact path="/envios" component={Envios} />
+          <Route exact path="/contacto" component={Contacto} />
+          <Route
+            exact
+            path="/preguntasFrecuentes"
+            component={PreguntasFrecuentes}
+          />
+          <Route exact path="/item/:itemId" component={ItemDetailContainer} />
+          <Route exact path="/carrito" component={CartContainer} />
+        </Switch>
+        <Footer />
       </BrowserRouter>
     </CartProvider>
   );

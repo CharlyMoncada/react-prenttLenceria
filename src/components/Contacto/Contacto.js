@@ -1,17 +1,18 @@
 import React from "react";
 import { provinciasData } from "./provinciasData";
+import "./_contacto.scss";
 
 export const Contacto = () => {
 
   return (
     <section>
-      <div class="contacto">
-        <div class="form">
+      <div className="contacto">
+        <div className="form">
           <form action="#" method="POST" enctype="multipart/form-data">
             <div>
               <p>Completar formulario de contacto</p>
             </div>
-            <div class="form__inputBox">
+            <div className="form__inputBox">
               <input
                 type="text"
                 name="nombre"
@@ -21,7 +22,7 @@ export const Contacto = () => {
                 onblur="saveField(this)"
               />
             </div>
-            <div class="form__inputBox">
+            <div className="form__inputBox">
               <input
                 type="text"
                 name="apellido"
@@ -31,7 +32,7 @@ export const Contacto = () => {
                 onblur="saveField(this)"
               />
             </div>
-            <div class="form__inputBox">
+            <div className="form__inputBox">
               <input
                 type="number"
                 name="telefono"
@@ -40,7 +41,7 @@ export const Contacto = () => {
                 onblur="saveField(this)"
               />
             </div>
-            <div class="form__inputBox">
+            <div className="form__inputBox">
               <input
                 type="email"
                 name="nombre"
@@ -79,11 +80,11 @@ export const Contacto = () => {
                 rows="5"
               ></textarea>
             </div>
-            <div class="form__buttons">
-              <div class="form__buttons_item">
+            <div className="form__buttons">
+              <div className="form__buttons_item">
                 <input type="reset" value="Limpiar Formulario" />
               </div>
-              <div class="form__buttons_item">
+              <div className="form__buttons_item">
                 <input
                   type="submit"
                   value="Enviar Formulario"
@@ -94,8 +95,8 @@ export const Contacto = () => {
           </form>
         </div>
 
-        <div class="mapouter">
-          <div class="gmap_canvas">
+        <div className="mapouter">
+          <div className="gmap_canvas">
             <iframe
               title="Google Map"
               width="500"

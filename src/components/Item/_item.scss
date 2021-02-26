@@ -1,0 +1,14 @@
+@import "../../sass/variables";
+
+.grid-gallery__image {
+  border: 1px $color-salmon solid;
+  max-width: 100%;
+  height: auto;
+}
+
+.grid-gallery__text {
+  background-color: $color-salmon;
+  border: 1px solid black;
+  text-align: center;
+  position: absolute;
+}

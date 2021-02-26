@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./_itemCounter.scss";
 
 const ItemCounter = ({ initial, max, onAdd }) => {
   const [counter, setCounter] = useState(initial);
