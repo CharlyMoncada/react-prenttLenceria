@@ -10,6 +10,9 @@ export const CartProvider = ({ children }) => {
     if (!inCart(item.id)) {
       console.log(item + quantity);
       setItems([...items, { item, quantity }]);
+      alert("Producto agregado");
+    } else {
+      alert("Producto ya agregado previamente");
     }
   };
 
@@ -19,6 +22,7 @@ export const CartProvider = ({ children }) => {
 
   const deleteItems = () => {
     setItems([]);
+    alert("Productos eliminados del carrito");
   };
 
   return (

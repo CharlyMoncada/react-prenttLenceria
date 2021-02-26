@@ -7,6 +7,14 @@ const Cart = () => {
   console.log(items);
   console.log(items[0]);
 
+  const comprar = () => {
+    if (items.size > 0) {
+      alert("Productos comprados");
+    } else {
+      alert("No tiene productos en el carrito");
+    }
+  };
+
   return (
     <div className="cart">
       <table className="itemDetailTable">
@@ -30,7 +38,7 @@ const Cart = () => {
       </table>
 
       <br></br>
-      <button>Comprar</button>
+      <button onClick={comprar}>Comprar</button>
       <button onClick={deleteItems}>Limpiar</button>
       <br></br>
     </div>
