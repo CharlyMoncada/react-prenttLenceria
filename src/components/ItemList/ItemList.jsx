@@ -1,6 +1,5 @@
 import React from "react";
 import Item from "../Item/Item.jsx";
-import './_itemList.scss'
 
 export default function ItemList({ items }) {
   return (

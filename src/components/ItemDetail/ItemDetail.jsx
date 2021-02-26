@@ -1,43 +1,57 @@
-import React, { useState } from "react";
-import { Card } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
 import ItemCounter from "../ItemCounter/ItemCounter";
 import useCartContext from "../../contexts/CartContext";
+import "./_itemDetail.scss";
 
 const ItemDetail = ({ product }) => {
   const [counter, setCounter] = useState(0);
   const [quantity, setQuantity] = useState(0);
   const { addItem } = useCartContext();
 
-  const hanldeCounter = (counter) => {
+  const handleCounter = (counter) => {
     setCounter(counter);
+    setQuantity(counter);
   };
 
   return (
-    <div className="itemDetailCont">
-      <Card
-        className="text-center"
-        bg="secondary"
-        text="white"
-        style={{ minHeight: "90vh" }}
-      >
-        <Card.Header>Detalles del Producto</Card.Header>
-        <Card.Body>
-          <Card.Title>{product.name}</Card.Title>
-          <Card.Text> {product.brand}</Card.Text>
-        </Card.Body>
-        <Card.Footer className="text-white">
-          {product.stock} en Stock!
-        </Card.Footer>
-      </Card>
+    <div>
+      {product && (
+        <div>
+          <table className="itemDetailTable">
+            <tr>
+              <th>Brand</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Stock</th>
+            </tr>
+            <tr>
+              <th>{product.brand}</th>
+              <th>{product.name}</th>
+              <th>{product.price}</th>
+              <th>{product.stock}</th>
+            </tr>
+          </table>
 
+          <img
+            className="grid-gallery__image"
+            id={product.id}
+            src={product.route}
+            alt={product.name}
+          />
+        </div>
+      )}
+
+      <br />
       <div>
-        <ItemCounter initial={1} max={5} onAdd={hanldeCounter} />
+        <ItemCounter initial={1} max={5} onAdd={handleCounter} />
       </div>
 
-      <br></br>
-      <button onClick={addItem(product, quantity)}>
-        Agregar {quantity} items al carrito
-      </button>
+      <br />
+      <div>
+        <button onClick={() => addItem(product, quantity)}>
+          Agregar {quantity} items al carrito
+        </button>
+      </div>
     </div>
   );
 };

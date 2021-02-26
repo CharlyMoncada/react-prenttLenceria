@@ -31,7 +31,7 @@ function App() {
               path="/preguntasFrecuentes"
               component={PreguntasFrecuentes}
             />
-            <Route exact path="/item/:id" component={ItemDetailContainer} />
+            <Route exact path="/item/:itemId" component={ItemDetailContainer} />
             <Route exact path="/carrito" component={CartContainer} />
           </Switch>
           <Footer />
