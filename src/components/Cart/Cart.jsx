@@ -1,20 +1,8 @@
 import React from "react";
-import useCartContext from "../../contexts/CartContext";
 import "./_cart.scss";
 
-const Cart = () => {
-  const { items, deleteItems } = useCartContext();
+const Cart = ({ items, comprar, deleteItems }) => {
   console.log(items);
-  console.log(items[0]);
-
-  const comprar = () => {
-    if (items.size > 0) {
-      alert("Productos comprados");
-    } else {
-      alert("No tiene productos en el carrito");
-    }
-  };
-
   return (
     <div className="cart">
       <table className="itemDetailTable">
@@ -37,10 +25,14 @@ const Cart = () => {
           })}
       </table>
 
-      <br></br>
-      <button className='btn-counter' onClick={comprar}>Comprar</button>
-      <button className='btn-counter' onClick={deleteItems}>Limpiar</button>
-      <br></br>
+      {/* <br></br>
+      <button className="btn-counter" onClick={comprar}>
+        Comprar
+      </button>
+      <button className="btn-counter" onClick={deleteItems}>
+        Limpiar
+      </button>
+      <br></br> */}
     </div>
   );
 };

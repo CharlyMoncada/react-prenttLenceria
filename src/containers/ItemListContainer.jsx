@@ -36,7 +36,7 @@ const ItemsListContainer = () => {
     itemsFirebase
       .get()
       .then((querySnapshot) => {
-        console.log(querySnapshot.size);
+        //console.log(querySnapshot.size);
         let arrayItems = querySnapshot.docs.map((doc) => {
           return {
             id: doc.id,
@@ -44,7 +44,7 @@ const ItemsListContainer = () => {
           };
         });
         setBrands([{ id: "products", name: "Todos" }, ...arrayItems]);
-        console.log(arrayItems);
+        //console.log(arrayItems);
       })
       .catch((error) => {
         console.log(error);
@@ -57,7 +57,7 @@ const ItemsListContainer = () => {
     itemsFirebase
       .get()
       .then((querySnapshot) => {
-        console.log(querySnapshot.size);
+        //console.log(querySnapshot.size);
         let arrayItems = querySnapshot.docs.map((doc) => {
           return {
             id: doc.id,
@@ -65,20 +65,53 @@ const ItemsListContainer = () => {
           };
         });
         setProducts(arrayItems);
-        console.log(arrayItems);
+        //console.log(arrayItems);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
-  useEffect((e) => {
+  // useEffect((e) => {
+  //   let db = getFirestore();
+  //   let itemsFirebase = db.collection("products").where('brand', '===', value);
+  //   itemsFirebase
+  //     .get()
+  //     .then((querySnapshot) => {
+  //       console.log(querySnapshot.size);
+  //       let arrayItems = querySnapshot.docs.map((doc) => {
+  //         return {
+  //           id: doc.id,
+  //           ...doc.data(),
+  //         };
+  //       });
+  //       setProducts(arrayItems);
+  //       console.log(arrayItems);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  //   }, []);
+
+  console.log(value, "brands");
+  const ChangeItemsByBrand = (e) => {
+    let brand = e.target.value;
+    //console.log(e.target.value);
+    let itemsFirebase;
+
     let db = getFirestore();
-    let itemsFirebase = db.collection("products").where('brand', '===', value);
+    if (brand === "Todos") {
+      itemsFirebase = db.collection("products");
+    } else {
+      itemsFirebase = db
+        .collection("products")
+        .where("brand", "==", e.target.value);
+    }
+
     itemsFirebase
       .get()
       .then((querySnapshot) => {
-        console.log(querySnapshot.size);
+        //console.log(querySnapshot.size);
         let arrayItems = querySnapshot.docs.map((doc) => {
           return {
             id: doc.id,
@@ -86,23 +119,23 @@ const ItemsListContainer = () => {
           };
         });
         setProducts(arrayItems);
-        console.log(arrayItems);
+        //console.log(arrayItems);
       })
       .catch((error) => {
         console.log(error);
       });
-    }, []);
 
-  console.log(value, "brands");
+    //setValue(e.target.value)
+  };
 
   return (
-    <div className='itemList'>
-      <div className='itemListContainer'>
-        <label className='itemListContainer__title'>Seleccionar Marca</label>
-        <select>
+    <div className="itemList">
+      <div className="itemListContainer">
+        <label className="itemListContainer__title">Seleccionar Marca</label>
+        <select onChange={(e) => ChangeItemsByBrand(e)}>
           {brands &&
             brands.length > 0 &&
-            brands.map((value) => <option onClick={e => setValue(e.target.value)} key={value.id}>{value.name}</option>)}
+            brands.map((value) => <option key={value.id}>{value.name}</option>)}
         </select>
       </div>
       <ItemList items={products} />;
