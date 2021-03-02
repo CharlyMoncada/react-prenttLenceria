@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./_item.scss";
 
 export default function Item({ item }) {
-  
+  console.log(item);
   return (
     <div>
       <Link to={{ pathname: "/item/" + item.id }} key={item.id}>

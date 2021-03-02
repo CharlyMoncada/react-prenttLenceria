@@ -24,9 +24,9 @@ const ItemCounter = ({ initial, max, onAdd }) => {
     <article>
       {counter}
       <br />
-      <button onClick={handleIncrement}>Increment</button>
-      <button onClick={handleAdd}>Add</button>
-      <button onClick={handleDecrement}>Decrement</button>
+      <button className='btn-counter' onClick={handleIncrement}>Increment</button>
+      <button className='btn-counter' onClick={handleAdd}>Add</button>
+      <button className='btn-counter' onClick={handleDecrement}>Decrement</button>
     </article>
   );
 };

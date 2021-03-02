@@ -1,0 +1,15 @@
+.btn-counter {
+    font-family: monospace;
+    padding: 8px;
+    margin: 0 5px;
+    border-radius: 8px;
+    border: 0.5px solid;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: white;
+    &:hover {
+        background-color: gray;
+        transition: 1s;
+        color: white;
+    }
+}

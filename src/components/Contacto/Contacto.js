@@ -82,10 +82,11 @@ export const Contacto = () => {
             </div>
             <div className="form__buttons">
               <div className="form__buttons_item">
-                <input type="reset" value="Limpiar Formulario" />
+                <input className='btn-counter' type="reset" value="Limpiar Formulario" />
               </div>
               <div className="form__buttons_item">
                 <input
+                  className='btn-counter'
                   type="submit"
                   value="Enviar Formulario"
                   onclick="sendEmail()"

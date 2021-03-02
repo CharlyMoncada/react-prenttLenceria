@@ -1,0 +1,9 @@
+.itemList {
+    .itemListContainer {
+        display: flex;
+        justify-content: center;
+        .itemListContainer__title {
+            margin-right: 10px;
+        }
+    }
+}

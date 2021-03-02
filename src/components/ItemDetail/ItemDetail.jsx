@@ -32,7 +32,7 @@ const ItemDetail = ({ product }) => {
             </tr>
           </table>
 
-          <img id={product.id} src={product.route} alt={product.name} />
+          <img className="grid-gallery__image" id={product.id} src={product.route} alt={product.name} />
           <br />
           <div>
             <ItemCounter
@@ -44,7 +44,7 @@ const ItemDetail = ({ product }) => {
 
           <br />
           <div>
-            <button onClick={() => addItem(product, quantity)}>
+            <button className='btn-counter' onClick={() => addItem(product, quantity)}>
               Agregar {quantity} items al carrito
             </button>
           </div>

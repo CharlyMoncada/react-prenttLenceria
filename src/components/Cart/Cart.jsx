@@ -38,8 +38,8 @@ const Cart = () => {
       </table>
 
       <br></br>
-      <button onClick={comprar}>Comprar</button>
-      <button onClick={deleteItems}>Limpiar</button>
+      <button className='btn-counter' onClick={comprar}>Comprar</button>
+      <button className='btn-counter' onClick={deleteItems}>Limpiar</button>
       <br></br>
     </div>
   );

@@ -1,10 +1,19 @@
 @import "../../sass/variables";
 
+.logo__container {
+  display: flex;
+  justify-content: center;
+  .logoNavbar {
+    height: 140px;
+  }
+}
 .navBar {
-  grid-area: 2 / 1 / 3 / 4;
-  justify-content: space-around;
+  display: flex;
+  // grid-area: 2 / 1 / 3 / 4;
+  justify-content: center;
+  align-items: center;
   margin-top: 10px;
-  padding: 3px;
+  padding: 3px; 
   font-size: 30px;
   width: 100%;
 
@@ -14,8 +23,11 @@
     justify-content: space-between;
     align-content: space-between;
 
+
     li {
       display: flex;
+      padding-left: 25px;
+      padding-right: 25px;
 
       a {
         color: black;
