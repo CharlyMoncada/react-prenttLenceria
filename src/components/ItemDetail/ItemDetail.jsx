@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ItemCounter from "../ItemCounter/ItemCounter";
 import useCartContext from "../../contexts/CartContext";
+import Button from "../Button/Button";
 import "./_itemDetail.scss";
 
 const ItemDetail = ({ product }) => {
@@ -19,9 +20,9 @@ const ItemDetail = ({ product }) => {
         <div>
           <table className="itemDetailTable">
             <tr>
-              <th>Brand</th>
-              <th>Name</th>
-              <th>Price</th>
+              <th>Marca</th>
+              <th>Producto</th>
+              <th>Precio</th>
               <th>Stock</th>
             </tr>
             <tr>
@@ -31,8 +32,13 @@ const ItemDetail = ({ product }) => {
               <th>{product.stock}</th>
             </tr>
           </table>
-
-          <img className="grid-gallery__image" id={product.id} src={product.route} alt={product.name} />
+          <br />
+          <img
+            className="imageDetail"
+            id={product.id}
+            src={product.route}
+            alt={product.name}
+          />
           <br />
           <div>
             <ItemCounter
@@ -41,13 +47,15 @@ const ItemDetail = ({ product }) => {
               onAdd={handleCounter}
             />
           </div>
-
           <br />
-          <div>
-            <button className='btn-counter' onClick={() => addItem(product, quantity)}>
-              Agregar {quantity} items al carrito
-            </button>
-          </div>
+          {quantity > 0 && (
+            <div>
+              <Button
+                onClick={() => addItem(product, quantity)}
+                label={"Agregar " + quantity + " productos al carrito"}
+              />
+            </div>
+          )}
         </div>
       )}
     </div>

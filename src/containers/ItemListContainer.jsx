@@ -6,29 +6,6 @@ import "./_itemListContainer.scss";
 const ItemsListContainer = () => {
   const [products, setProducts] = useState([]);
   const [brands, setBrands] = useState([]);
-  const [value, setValue] = useState({});
-  // const [brandsContainer, setBrandsContainer] = useState([]);
-
-  // useEffect(() => {
-  //   let db = getFirestore();
-  //   let itemsFirebase = db.collection("products");
-  //   itemsFirebase
-  //     .get()
-  //     .then((querySnapshot) => {
-  //       console.log(querySnapshot.size);
-  //       let arrayItems = querySnapshot.docs.map((doc) => {
-  //         return {
-  //           id: doc.id,
-  //           ...doc.data(),
-  //         };
-  //       });
-  //       setProducts(arrayItems);
-  //       console.log(arrayItems);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, []);
 
   useEffect(() => {
     let db = getFirestore();
@@ -36,71 +13,32 @@ const ItemsListContainer = () => {
     itemsFirebase
       .get()
       .then((querySnapshot) => {
-        //console.log(querySnapshot.size);
+        console.log(querySnapshot.size);
         let arrayItems = querySnapshot.docs.map((doc) => {
           return {
             id: doc.id,
             ...doc.data(),
           };
         });
-        setBrands([{ id: "products", name: "Todos" }, ...arrayItems]);
-        //console.log(arrayItems);
+        setBrands([
+          { id: "ninguno", name: "Seleccionar" },
+          { id: "products", name: "Todas" },
+          ...arrayItems,
+        ]);
+        console.log(arrayItems);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
-  useEffect(() => {
-    let db = getFirestore();
-    let itemsFirebase = db.collection("products");
-    itemsFirebase
-      .get()
-      .then((querySnapshot) => {
-        //console.log(querySnapshot.size);
-        let arrayItems = querySnapshot.docs.map((doc) => {
-          return {
-            id: doc.id,
-            ...doc.data(),
-          };
-        });
-        setProducts(arrayItems);
-        //console.log(arrayItems);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
-  // useEffect((e) => {
-  //   let db = getFirestore();
-  //   let itemsFirebase = db.collection("products").where('brand', '===', value);
-  //   itemsFirebase
-  //     .get()
-  //     .then((querySnapshot) => {
-  //       console.log(querySnapshot.size);
-  //       let arrayItems = querySnapshot.docs.map((doc) => {
-  //         return {
-  //           id: doc.id,
-  //           ...doc.data(),
-  //         };
-  //       });
-  //       setProducts(arrayItems);
-  //       console.log(arrayItems);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  //   }, []);
-
-  console.log(value, "brands");
   const ChangeItemsByBrand = (e) => {
     let brand = e.target.value;
-    //console.log(e.target.value);
     let itemsFirebase;
 
     let db = getFirestore();
-    if (brand === "Todos") {
+
+    if (brand === "Todas") {
       itemsFirebase = db.collection("products");
     } else {
       itemsFirebase = db
@@ -111,7 +49,7 @@ const ItemsListContainer = () => {
     itemsFirebase
       .get()
       .then((querySnapshot) => {
-        //console.log(querySnapshot.size);
+        console.log(querySnapshot.size);
         let arrayItems = querySnapshot.docs.map((doc) => {
           return {
             id: doc.id,
@@ -119,13 +57,10 @@ const ItemsListContainer = () => {
           };
         });
         setProducts(arrayItems);
-        //console.log(arrayItems);
       })
       .catch((error) => {
         console.log(error);
       });
-
-    //setValue(e.target.value)
   };
 
   return (

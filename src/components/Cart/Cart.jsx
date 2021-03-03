@@ -1,16 +1,15 @@
 import React from "react";
 import "./_cart.scss";
 
-const Cart = ({ items, comprar, deleteItems }) => {
-  console.log(items);
+const Cart = ({ items }) => {
   return (
     <div className="cart">
       <table className="itemDetailTable">
         <tr>
-          <th>Brand</th>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Quantity</th>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
         </tr>
         {items &&
           items.map((item) => {
@@ -24,15 +23,6 @@ const Cart = ({ items, comprar, deleteItems }) => {
             );
           })}
       </table>
-
-      {/* <br></br>
-      <button className="btn-counter" onClick={comprar}>
-        Comprar
-      </button>
-      <button className="btn-counter" onClick={deleteItems}>
-        Limpiar
-      </button>
-      <br></br> */}
     </div>
   );
 };

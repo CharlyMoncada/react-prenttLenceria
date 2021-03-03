@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "../Button/Button";
 import "./_itemCounter.scss";
 
 const ItemCounter = ({ initial, max, onAdd }) => {
@@ -21,13 +22,14 @@ const ItemCounter = ({ initial, max, onAdd }) => {
   };
 
   return (
-    <article>
-      {counter}
+    <div>
+      <text>Cantidad para agregar: {counter}</text>
       <br />
-      <button className='btn-counter' onClick={handleIncrement}>Increment</button>
-      <button className='btn-counter' onClick={handleAdd}>Add</button>
-      <button className='btn-counter' onClick={handleDecrement}>Decrement</button>
-    </article>
+      <br />
+      <Button onClick={handleIncrement} label={"Aumentar"} />
+      <Button onClick={handleAdd} label={"Agregar"} />
+      <Button onClick={handleDecrement} label={"Disminuir"} />
+    </div>
   );
 };
 

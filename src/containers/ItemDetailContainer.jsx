@@ -6,11 +6,8 @@ import ItemDetail from "../components/ItemDetail/ItemDetail";
 export default function ItemDetailContainer() {
   const { itemId } = useParams();
   const [product, setProduct] = useState();
-  console.log("Id: " + itemId);
 
   useEffect(() => {
-    console.log("Id: " + itemId);
-
     if (itemId) {
       let db = getFirestore();
       console.log(itemId);
